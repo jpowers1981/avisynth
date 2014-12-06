@@ -20,4 +20,5 @@ test_script:
   - npm --version
   - npm install
   - npm test
-  - node_modules/.bin/codeclimate < coverage/lcov.info
+  - sed "s/'b311489a5d04c2a02795849910e9b59ec691a933ef046855ba2b86e07659c73a'/b311489a5d04c2a02795849910e9b59ec691a933ef046855ba2b86e07659c73a/g" coverage/lcov.info > coverage/lcov-clean.info
+  - node_modules/.bin/codeclimate < coverage/lcov-clean.info
