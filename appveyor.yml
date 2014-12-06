@@ -10,6 +10,7 @@ version: "AppVeyor build {build}"
 environment:
   # The codeclimate-test-reporter expects an env. variable with this name.
   CODECLIMATE_REPO_TOKEN: b311489a5d04c2a02795849910e9b59ec691a933ef046855ba2b86e07659c73a
+  CC_OUTPUT: stdout
   matrix:
     - nodejs_version: 0.10
 
@@ -20,5 +21,4 @@ test_script:
   - npm --version
   - npm install
   - npm test
-  - cat coverage/lcov.info
   - node_modules/.bin/codeclimate < coverage/lcov.info
